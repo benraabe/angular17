@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PostDetail } from '../interfaces/post-detail';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
 
@@ -12,7 +14,7 @@ export class PostService {
 
   constructor() { }
 
-  getPosts() {
-    return this.http.get(BASE_URL);
+  getPosts(): Observable<PostDetail[]> {
+    return this.http.get<PostDetail[]>(BASE_URL);
   }
 }

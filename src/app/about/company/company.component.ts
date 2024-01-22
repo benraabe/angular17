@@ -40,7 +40,7 @@ export class CompanyComponent implements OnInit{
   loadPosts() {
     this.postService.getPosts().subscribe({
       next: (posts: any)  => {
-        this.posts = posts;
+        this.posts = posts as PostDetail[];
         console.log("Posts: ", posts);
 
       },
