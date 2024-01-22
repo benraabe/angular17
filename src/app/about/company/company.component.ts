@@ -2,6 +2,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PostService } from '../../services/post.service';
+import { PostDetail } from '../../interfaces/post-detail';
 
 @Component({
   selector: 'app-company',
@@ -15,7 +16,7 @@ export class CompanyComponent implements OnInit{
   // http = inject(HttpClient);
 
   private postService = inject(PostService);
-  posts: any = [];
+  posts: PostDetail[] = [];
 
   ngOnInit(): void {
     this.loadPosts();
