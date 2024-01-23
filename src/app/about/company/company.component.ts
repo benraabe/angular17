@@ -2,12 +2,12 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PostService } from '../../services/post.service';
-import { PostDetailI } from '../../interfaces/post-detail';
+import { PostDetailI } from '../../types/interfaces/post-detail';
 import { Store, select } from '@ngrx/store';
 import { getPosts } from '../../store/post.action';
 import { errorSelector, isLoadingSelector, postsSelector } from '../../store/post.selectors';
 import { Observable } from 'rxjs';
-import { AppStateI } from '../../interfaces/app-state';
+import { AppStateI } from '../../types/interfaces/app-state';
 import { CommonModule } from '@angular/common';
 
 @Component({

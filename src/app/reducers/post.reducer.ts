@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { getPosts, getPostsFailure, getPostsSuccess } from "../store/post.action";
-import { PostStateI } from "../interfaces/post-state";
+import { PostStateI } from "../types/interfaces/post-state";
 
 
 export const inistialState : PostStateI = {
