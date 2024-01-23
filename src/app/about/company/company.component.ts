@@ -2,24 +2,43 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PostService } from '../../services/post.service';
-import { PostDetail } from '../../interfaces/post-detail';
+import { PostDetailI } from '../../interfaces/post-detail';
+import { Store, select } from '@ngrx/store';
+import { getPosts } from '../../store/post.action';
+import { errorSelector, isLoadingSelector, postsSelector } from '../../store/post.selectors';
+import { Observable } from 'rxjs';
+import { AppStateI } from '../../interfaces/app-state';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-company',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './company.component.html',
   styleUrl: './company.component.scss'
 })
 export class CompanyComponent implements OnInit{
 
-  // http = inject(HttpClient);
 
+
+  // http = inject(HttpClient);
+  private store = inject(Store<AppStateI>);
   private postService = inject(PostService);
-  posts: PostDetail[] = [];
+  posts2: PostDetailI[] = [];
+  isLoading$?: Observable<boolean>;
+  error$?: Observable<string | null>;
+  posts$?: Observable<PostDetailI[]>;
+
+  constructor() {
+    this.isLoading$ = this.store.pipe(select(isLoadingSelector))
+    this.error$ = this.store.pipe(select(errorSelector))
+    this.posts$ = this.store.pipe(select(postsSelector))
+  }
+
 
   ngOnInit(): void {
     this.loadPosts();
+    this.store.dispatch(getPosts());
   }
 
   // fetchPost() {
@@ -40,7 +59,7 @@ export class CompanyComponent implements OnInit{
   loadPosts() {
     this.postService.getPosts().subscribe({
       next: (posts: any)  => {
-        this.posts = posts as PostDetail[];
+        this.posts2 = posts as PostDetailI[];
         console.log("Posts: ", posts);
 
       },

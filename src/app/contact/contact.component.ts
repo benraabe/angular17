@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { decrement, increment, reset } from '../counter.action';
+import { decrement, increment, reset } from '../store/counter.action';
 import { CommonModule } from '@angular/common';
 
 @Component({
