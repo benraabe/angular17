@@ -1,13 +1,13 @@
 // import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PostService } from '../../services/post.service';
-import { PostDetailI } from '../../types/interfaces/post-detail';
+import { PostService } from '../services/post.service';
+import { PostDetailI } from '../../../shared/types/interfaces/post-detail';
 import { Store, select } from '@ngrx/store';
-import { getPosts } from '../../store/post.action';
-import { errorSelector, isLoadingSelector, postsSelector } from '../../store/post.selectors';
+import { getPosts } from '../../../shared/store/post.action';
+import { errorSelector, isLoadingSelector, postsSelector } from '../../../shared/store/post.selectors';
 import { Observable } from 'rxjs';
-import { AppStateI } from '../../types/interfaces/app-state';
+import { AppStateI } from '../../../shared/types/interfaces/app-state';
 import { CommonModule } from '@angular/common';
 
 @Component({

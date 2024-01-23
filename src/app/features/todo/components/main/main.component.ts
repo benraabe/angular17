@@ -1,7 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
-import { TodoService } from '../../../services/todo.service';
+import { TodoService } from '../../services/todo.service';
 import { CommonModule } from '@angular/common';
-import { FilterEnum } from '../../../types/enums/filter';
+import { FilterEnum } from '../../../../shared/types/enums/filter';
 import { SingleTodoComponent } from '../single-todo/single-todo.component';
 
 @Component({

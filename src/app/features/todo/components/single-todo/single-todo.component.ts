@@ -11,8 +11,8 @@ import {
   inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodoI } from '../../../types/interfaces/todo';
-import { TodoService } from '../../../services/todo.service';
+import { TodoI } from '../../../../shared/types/interfaces/todo';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-todos-todo',

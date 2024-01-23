@@ -4,10 +4,10 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers, metaReducers } from './shared/reducers';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideEffects } from '@ngrx/effects';
-import { PostEffects } from './store/post.effects';
+import { PostEffects } from './shared/store/post.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [

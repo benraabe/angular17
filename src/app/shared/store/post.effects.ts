@@ -2,7 +2,7 @@ import { Injectable, inject } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { getPosts, getPostsFailure, getPostsSuccess } from "./post.action";
 import { catchError, map, mergeMap, of } from "rxjs";
-import { PostService } from "../services/post.service";
+import { PostService } from "../../features/about/services/post.service";
 
 
 @Injectable()

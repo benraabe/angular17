@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
-import { TodoI } from '../types/interfaces/todo';
-import { FilterEnum } from '../types/enums/filter';
+import { TodoI } from '../../../shared/types/interfaces/todo';
+import { FilterEnum } from '../../../shared/types/enums/filter';
 
 @Injectable({
   providedIn: 'root'

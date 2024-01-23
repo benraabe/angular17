@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, delay } from 'rxjs';
-import { PostDetailI } from '../types/interfaces/post-detail';
+import { PostDetailI } from '../../../shared/types/interfaces/post-detail';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/posts?_limit=10';
 
